@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:where(.dark-mode, .dark-mode *));
+
+/* 💡 light-default theme variables (Base) */
+:root {
+  /* BACKGROUNDS & SURFACES */
+  --color-primary-bg: oklch(100% 0 0);
+  --color-secondary-bg: oklch(98% 0 0);
+  --color-tertiary-bg: oklch(90% 0 0);
+
+  /* TEXT & ICONS */
+  --color-primary-text: oklch(25% 0 0);
+  --color-secondary-text: oklch(45% 0 0);
+  --color-subtle-text: oklch(70% 0 0);
+
+  /* ACCENT & ACTION */
+  --color-accent: oklch(55% 0.15 260);
+  --color-accent-hover: oklch(50% 0.15 260);
+  --color-accent-text: oklch(95% 0 0);
+
+  /* UTILITY / STATE COLORS */
+  --color-success: oklch(65% 0.15 140);
+  --color-warning: oklch(80% 0.15 90);
+  --color-error: oklch(60% 0.18 20);
+  --color-border: oklch(85% 0 0);
+}
+
+/* 🌑 dark-mode theme overrides */
+.dark-mode {
+  /* BACKGROUNDS & SURFACES */
+  --color-primary-bg: oklch(20% 0 0);
+  --color-secondary-bg: oklch(25% 0 0);
+  --color-tertiary-bg: oklch(30% 0 0);
+
+  /* TEXT & ICONS */
+  --color-primary-text: oklch(90% 0 0);
+  --color-secondary-text: oklch(70% 0 0);
+  --color-subtle-text: oklch(50% 0 0);
+
+  /* ACCENT & ACTION */
+  --color-accent: oklch(60% 0.12 280);
+  --color-accent-hover: oklch(55% 0.12 280);
+  --color-accent-text: oklch(25% 0 0);
+
+  /* UTILITY / STATE COLORS */
+  --color-error: oklch(65% 0.18 30);
+  --color-border: oklch(40% 0 0);
+}
+
+/* 🌊 aqua-ocean theme overrides */
+.aqua-ocean {
+  /* BACKGROUNDS & SURFACES */
+  --color-primary-bg: oklch(35% 0.08 220);
+  --color-secondary-bg: oklch(40% 0.08 220);
+  --color-tertiary-bg: oklch(45% 0.08 220);
+
+  /* TEXT & ICONS */
+  --color-primary-text: oklch(95% 0 0);
+  --color-secondary-text: oklch(80% 0 0);
+  --color-subtle-text: oklch(65% 0.05 220);
+
+  /* ACCENT & ACTION */
+  --color-accent: oklch(80% 0.12 80);
+  --color-accent-hover: oklch(75% 0.12 80);
+  --color-accent-text: oklch(25% 0.08 220);
+
+  /* UTILITY / STATE COLORS */
+  --color-error: oklch(70% 0.18 30);
+  --color-border: oklch(55% 0.08 220);
+}
+
+/* Map the CSS Variables to Tailwind Utilities (Unchanged) */
+@theme {
+  --color-primary-bg: var(--color-primary-bg);
+  --color-secondary-bg: var(--color-secondary-bg);
+  --color-tertiary-bg: var(--color-tertiary-bg);
+
+  --color-primary-text: var(--color-primary-text);
+  --color-secondary-text: var(--color-secondary-text);
+  --color-subtle-text: var(--color-subtle-text);
+
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-accent-text: var(--color-accent-text);
+
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-border: var(--color-border);
+}
+
+/* Semantic helper classes for components (map to the user's simplified variables) */
+.navbar,
+.theme-navbar {
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary-text);
+  border-bottom: 1px solid var(--color-border);
+}
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  color: var(--color-primary-text);
+  background: transparent;
+}
+.nav-item-button {
+  background: transparent;
+}
+.nav-item-button-icon {
+  background: transparent;
+}
+.nav-item-button-hover:hover,
+.nav-item-button-icon-hover:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary-text) 4%,
+    transparent
+  );
+}
+.nav-item-dropdown-list {
+  background-color: var(--color-secondary-bg);
+  color: var(--color-primary-text);
+  border: 1px solid var(--color-border);
+}
+.nav-item-dropdown-list-item {
+  color: var(--color-primary-text);
+}
+.nav-item-dropdown-theme-title {
+  color: var(--color-subtle-text);
+  font-weight: 500;
+}
+.nav-item-dropdown-theme-highlight {
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+}
+.nav-item-dropdown-theme-name-text {
+  color: var(--color-primary-text);
+  font-weight: 500;
+}
+.nav-item-dropdown-theme-name-desc {
+  color: var(--color-subtle-text);
+  font-size: 0.85rem;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+.navbar-search-input {
+  background-color: var(--color-secondary-bg);
+  color: var(--color-primary-text);
+  border: 1px solid var(--color-border);
+}
+.navbar-search-icon {
+  color: var(--color-subtle-text);
+}
+
+.icon-button-primary {
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+}
+.icon-button-secondary {
+  background-color: var(--color-secondary-bg);
+  color: var(--color-primary-text);
+}
+.icon-button-primary-outline {
+  border: 1px solid var(--color-border);
+  color: var(--color-primary-text);
+  background: transparent;
+}
+
+/* Generic helpers used across components (Hero, etc.) */
+.bg-background {
+  background-color: var(--color-primary-bg) !important;
+}
+.text-foreground {
+  color: var(--color-primary-text) !important;
+}
+.text-primary {
+  color: var(--color-accent) !important;
+}
+.text-muted-foreground {
+  color: var(--color-subtle-text) !important;
+}
+.bg-secondary {
+  background-color: var(--color-secondary-bg) !important;
+}
+.bg-accent {
+  background-color: var(--color-accent) !important;
+}
+.bg-card {
+  background-color: var(--color-secondary-bg) !important;
+}
+.text-card-foreground {
+  color: var(--color-primary-text) !important;
+}

@@ -1,0 +1,21 @@
+.hero-section {
+  background-color: var(--hero-bg-color);
+}
+.hero-text-color1 {
+  color: var(--hero-text-color1);
+}
+.hero-text-color2 {
+  color: var(--hero-text-color2);
+}
+.hero-text-color3 {
+  color: var(--hero-text-color3);
+}
+.hero-text-color4 {
+  color: var(--hero-text-color4);
+}
+.shop-by-category-section {
+  background-color: var(--color-group-2e);
+}
+.shop-by-sellers-section {
+  background-color: var(--color-group-2f);
+}

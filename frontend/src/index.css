@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-group-1a: oklch(90.7% 0.057 248.8);
+  --color-group-1b: oklch(93.4% 0.043 234.3);
+  --color-group-1c: oklch(99% 0.006 84.1);
+  --color-group-1d: oklch(96.7% 0.04 84.8);
+  --color-group-1e: oklch(96.7% 0.04 84.8);
+  --color-group-1f: oklch(86.7% 0.088 84.5);
+
+  --color-group-2a: oklch(87.5% 0.082 201.2);
+  --color-group-2b: oklch(92.4% 0.052 214.2);
+  --color-group-2c: oklch(95.4% 0.035 214.9);
+  --color-group-2d: oklch(97.6% 0.021 214);
+  --color-group-2e: oklch(98.9% 0.011 211.5);
+  --color-group-2f: oklch(99.7% 0.003 207.2);
+
+  --color-group-3a: oklch(36.1% 0.081 247.5);
+  --color-group-3b: oklch(43% 0.106 248);
+  --color-group-3c: oklch(51.6% 0.131 247.9);
+  --color-group-3d: oklch(48.2% 0.149 256.7);
+  --color-group-3e: oklch(30.6% 0.137 268);
+
+  --color-group-4a: oklch(32.107% 0.00932 268.395);
+  --color-group-4b: oklch(44.3% 0.012 267.3);
+  --color-group-4c: oklch(56.7% 0.013 260.6);
+  --color-group-4d: oklch(69% 0.013 249.2);
+  --color-group-4e: oklch(78.379% 0.00731 248.2);
+  --color-group-4f: oklch(94.166% 0.00528 248.345);
+
+  --color-group-5a: oklch(75.517% 0.22781 146.111);
+
+  /* Custom styles  */
+
+  /* Category dropdown list and button  */
+  --category-btn-border: var(--color-group-3a);
+  --category-btn-bg: var(--color-group-3e);
+  --category-btn-color: var(--color-group-2d);
+
+  --header-nav-bg: var(--color-group-1c);
+  --header-nav-border-bottom: var(--color-group-1c);
+  --header-nav-link-dropdown-bg: var(--color-group-2f);
+
+  --header-searchbar-bg: var(--color-group-2f);
+  --header-searchbar-text: var(--color-group-3d);
+  --header-searchbar-border: var(--color-group-4d);
+  --header-searchbar-icon: var(--color-group-4b);
+  --header-searchbar-placeholder: var(--color-group-4b);
+  --header-searchbar-focus-color: var(--color-group-3c);
+
+  /* Theme button */
+  --nav-btn-icon-color: var(--color-group-4a);
+  --nav-btn-hover: var(--color-group-4a);
+  --nav-btn-dropdown-bg: var(--color-group-2f);
+  --nav-btn-dropdown-text: var(--color-group-4b);
+  --nav-btn-dropdown-item-hover: var(--color-group-2b);
+
+  /* NavLink button style  */
+  /* Primary  */
+  --navlink-btn-primary-border: var(--color-group-3a);
+  --navlink-btn-primary-bg-color: var(--color-group-3e);
+  --navlink-btn-primary-text-color: var(--color-group-2d);
+  /* Secondary  */
+  --navlink-btn-secondary-border: var(--color-group-3a);
+  --navlink-btn-secondary-bg-color: var(--color-group-3d);
+  --navlink-btn-secondary-text-color: var(--color-group-4f);
+  /* Outline  */
+  --navlink-btn-outline-text-color: var(--color-group-3a);
+  --navlink-btn-outline-bg-color: var(--color-group-2c);
+
+  /* Hero.jsx  */
+  --hero-bg-color: var(--color-group-4f);
+  --hero-text-color1: var(--color-group-3e);
+  --hero-text-color2: var(--color-group-3d);
+  --hero-text-color3: var(--color-group-4c);
+  --hero-text-color4: var(--color-group-5a);
+}
+
+.aqua-ocean {
+  --color-group-1a: oklch(22.1% 0.116 268.9);
+  --color-group-1b: oklch(84.4% 0.098 238.4);
+  --color-group-1c: oklch(71.9% 0.134 237.4);
+  --color-group-1d: oklch(62.8% 0.17 241);
+  --color-group-1e: oklch(39.1% 0.175 264.9);
+  --color-group-1f: oklch(28.3% 0.15 269.1);
+
+  --color-group-2a: oklch(36.1% 0.081 247.5);
+  --color-group-2b: oklch(43% 0.106 248);
+  --color-group-2c: oklch(51.6% 0.131 247.9);
+  --color-group-2d: oklch(48.2% 0.149 256.7);
+  --color-group-2e: oklch(30.6% 0.137 268);
+  --color-group-2f: oklch(33.8% 0.137 264.4);
+
+  --color-group-3a: oklch(56.7% 0.222 41.5);
+  --color-group-3b: oklch(62.6% 0.21 45.4);
+  --color-group-3c: oklch(68.3% 0.198 52.8);
+  --color-group-3d: oklch(75.5% 0.169 66.8);
+  --color-group-3e: oklch(79% 0.162 72.8);
+}
+
+.citrus-zest {
+  --color-group-1a: oklch(56.7% 0.222 41.5);
+  --color-group-1b: oklch(62.6% 0.21 45.4);
+  --color-group-1c: oklch(68.3% 0.198 52.8);
+  --color-group-1d: oklch(75.5% 0.169 66.8);
+  --color-group-1e: oklch(79% 0.162 72.8);
+  --color-group-1f: oklch(87.5% 0.134 83.2);
+
+  --color-group-2a: oklch(40.2% 0.187 35.8);
+  --color-group-2b: oklch(48.5% 0.21 38);
+  --color-group-2c: oklch(54.4% 0.222 40.3);
+  --color-group-2d: oklch(59.1% 0.217 44.5);
+  --color-group-2e: oklch(65% 0.198 48);
+  --color-group-2f: oklch(70.9% 0.17 51.5);
+
+  --color-group-3a: oklch(33% 0.093 125.7);
+  --color-group-3b: oklch(51.6% 0.125 119.5);
+  --color-group-3c: oklch(67.7% 0.128 126.3);
+  --color-group-3d: oklch(81.2% 0.144 109.8);
+  --color-group-3e: oklch(75.1% 0.155 106.6);
+}
+
+.dark-mode {
+  --color-group-1a: oklch(10.1% 0.043 277.8);
+  --color-group-1b: oklch(14.9% 0.052 277);
+  --color-group-1c: oklch(20.3% 0.058 274.6);
+  --color-group-1d: oklch(26.6% 0.063 270.6);
+  --color-group-1e: oklch(33.1% 0.051 279.7);
+  --color-group-1f: oklch(40.1% 0.041 283.4);
+
+  --color-group-2a: oklch(15.9% 0.009 270.3);
+  --color-group-2b: oklch(19.9% 0.009 269.8);
+  --color-group-2c: oklch(32.7% 0.01 270);
+  --color-group-2d: oklch(44.3% 0.012 267.3);
+  --color-group-2e: oklch(56.7% 0.013 260.6);
+  --color-group-2f: oklch(69% 0.013 249.2);
+
+  --color-group-3a: oklch(34.2% 0.091 63.8);
+  --color-group-3b: oklch(39.1% 0.091 66.8);
+  --color-group-3c: oklch(50.4% 0.09 69.3);
+  --color-group-3d: oklch(58.3% 0.09 68.7);
+  --color-group-3e: oklch(66.5% 0.089 68.3);
+}
