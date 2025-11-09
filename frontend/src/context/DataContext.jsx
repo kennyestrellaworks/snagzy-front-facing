@@ -2,10 +2,17 @@ import { createContext, useContext, useMemo } from "react";
 import { products } from "../data/products.js";
 import { stores } from "../data/stores.js";
 import { users } from "../data/users.js";
+import { orders } from "../data/orders.js";
+import { categories } from "../data/categories.js";
 
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
+  // System-related functions
+  const getTopLevelCategories = categories.filter((item) => {
+    return item.parent_id === null;
+  });
+
   // User-related functions
   const getUserData = (ownerId) => {
     let user = users.find((user) => user._id === ownerId);
@@ -24,36 +31,29 @@ export const DataProvider = ({ children }) => {
   };
 
   // Get top 10 featured products based on order data
-  const getFeaturedProducts = async () => {
-    try {
-      const { orders } = await import("../data/orders.js");
+  const getFeaturedProducts = () => {
+    const productCount = {};
 
-      const productCount = {};
-
-      orders.forEach((order) => {
-        order.items.forEach((item) => {
-          const productId = item.productId;
-          productCount[productId] =
-            (productCount[productId] || 0) + item.quantity;
-        });
+    orders.forEach((order) => {
+      order.items.forEach((item) => {
+        const productId = item.productId;
+        productCount[productId] =
+          (productCount[productId] || 0) + item.quantity;
       });
+    });
 
-      // Sort products by order count (most popular first)
-      const sortedProductIds = Object.entries(productCount)
-        .sort(([, countA], [, countB]) => countB - countA)
-        .map(([productId]) => productId)
-        .slice(0, 12); // Set number limit here, example top 10
+    // Sort products by order count (most popular first)
+    const sortedProductIds = Object.entries(productCount)
+      .sort(([, countA], [, countB]) => countB - countA)
+      .map(([productId]) => productId)
+      .slice(0, 12); // Set number limit here, example top 10
 
-      // Get full product data for the top 10
-      const featuredProducts = sortedProductIds
-        .map((productId) => getProductById(productId))
-        .filter((product) => product !== null); // Remove any null products
+    // Get full product data for the top 10
+    const featuredProducts = sortedProductIds
+      .map((productId) => getProductById(productId))
+      .filter((product) => product !== null); // Remove any null products
 
-      return featuredProducts;
-    } catch (error) {
-      console.error("Error loading featured products:", error);
-      return [];
-    }
+    return featuredProducts;
   };
 
   // Store-related functions
@@ -63,6 +63,7 @@ export const DataProvider = ({ children }) => {
 
   const value = useMemo(
     () => ({
+      getTopLevelCategories,
       getUserData,
       getProductImage,
       getProductById,

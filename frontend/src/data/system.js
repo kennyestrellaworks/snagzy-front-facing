@@ -1,3 +1,5 @@
+import { Facebook, Instagram, Youtube } from "lucide-react";
+
 export const themeOptions = [
   {
     _id: "theme58143672juodbcjr",
@@ -22,6 +24,104 @@ export const themeOptions = [
     name: "Citrus Zest",
     slug: "citrus-zest",
     description: "Warm and sunset",
+  },
+];
+
+export const socialLinks = [
+  {
+    _id: "social1354875684vmfigkrfis",
+    icon: Facebook,
+    href: "#",
+    label: "Facebook",
+    color: "hover:bg-blue-600",
+  },
+  {
+    _id: "social5687492165lcofjrqwck",
+    icon: Instagram,
+    href: "#",
+    label: "Instagram",
+    color: "hover:bg-pink-600",
+  },
+  {
+    _id: "social8745324685oifnbjrdep",
+    icon: Youtube,
+    href: "#",
+    label: "YouTube",
+    color: "hover:bg-red-600",
+  },
+];
+
+export const footerCompanyLinks = [
+  {
+    _id: "footercompanylinks5784624877cdkfiropfg",
+    name: "About Us",
+    slug: "about-us",
+  },
+  {
+    _id: "footercompanylinks8721468785dseplvmzxw",
+    name: "Careers",
+    slug: "careers",
+  },
+  {
+    _id: "footercompanylinks2415634875bvisjfrwtf",
+    name: "Press",
+    slug: "press",
+  },
+  {
+    _id: "footercompanylinks94257186548vwscgrtilx",
+    name: "Blog",
+    slug: "blog",
+  },
+  {
+    _id: "footerlink2487954345dwvnhiopsd",
+    name: "Affiliates",
+    slug: "affiliates",
+  },
+];
+
+export const footerCustomerServiceLinks = [
+  {
+    _id: "footercustomerservicelinks5784624877cdkfiropfg",
+    name: "Contact Us",
+    slug: "contact-us",
+  },
+  {
+    _id: "footercustomerservicelinks8721468785dseplvmzxw",
+    name: "Shipping Info",
+    slug: "shipping-info",
+  },
+  {
+    _id: "footercustomerservicelinks2415634875bvisjfrwtf",
+    name: "Returns",
+    slug: "returns",
+  },
+  {
+    _id: "footercustomerservicelinks94257186548vwscgrtilx",
+    name: "Size Guide",
+    slug: "size-guide",
+  },
+  {
+    _id: "footerlink2487954345dwvnhiopsd",
+    name: "FAQ",
+    slug: "faq",
+  },
+];
+
+export const footerHelpLinks = [
+  {
+    _id: "footerhelplinks5784624877cdkfiropfg",
+    name: "Help Center",
+    slug: "help-center",
+  },
+  {
+    _id: "footerhelplinks8721468785dseplvmzxw",
+    name: "Privacy Policy",
+    slug: "privacy-policy",
+  },
+  {
+    _id: "footerhelplinks5843618941mvnfiewdoj",
+    name: "Terms of Service",
+    slug: "terms-of-service",
   },
 ];
 

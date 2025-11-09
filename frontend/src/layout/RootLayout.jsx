@@ -13,9 +13,7 @@ export const RootLayout = () => {
       <main className="flex-1">
         <Outlet />
       </main>
-      <div className="footer">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };
