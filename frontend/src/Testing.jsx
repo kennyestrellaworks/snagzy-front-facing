@@ -1,11 +1,25 @@
-<div class="grid grid-cols-6 grid-rows-2 gap-4 p-4 bg-gray-100">
-  <div class="bg-blue-200 p-4 text-center row-span-2 col-span-2 text-2xl font-bold">
-    Box 1
-  </div>
-  <div class="bg-yellow-200 p-4 text-center">Box 2</div>
-  <div class="bg-yellow-200 p-4 text-center">Box 3</div>
-  <div class="bg-yellow-200 p-4 text-center">Box 4</div>
-  <div class="bg-yellow-200 p-4 text-center">Box 5</div>
-  <div class="bg-red-200 p-4 text-center col-span-2">Box 6</div>
-  <div class="bg-red-200 p-4 text-center col-span-2">Box 7</div>
-</div>;
+import React from "react";
+
+const Hero = () => {
+  return (
+    <section className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-24 px-6 flex flex-col items-center justify-center text-center">
+      <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+        Welcome to Our Website
+      </h1>
+      <p className="text-lg md:text-xl max-w-2xl mb-8">
+        We build modern and responsive web experiences that delight users and
+        grow your business.
+      </p>
+      <div className="flex gap-4">
+        <button className="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-indigo-100 transition">
+          Get Started
+        </button>
+        <button className="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition">
+          Learn More
+        </button>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

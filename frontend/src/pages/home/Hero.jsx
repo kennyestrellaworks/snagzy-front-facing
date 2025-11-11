@@ -2,45 +2,57 @@ import image1 from "../../assets/images/photo-1505740420928-5e560c06d30e.jpg";
 import image2 from "../../assets/images/photo-1576697010739-6373b63f3204.jpg";
 import image3 from "../../assets/images/photo-1579586337278-3befd40fd17a.jpg";
 import image4 from "../../assets/images/photo-1597892657493-6847b9640bac.jpg";
-import { NavLinkButton } from "../../components/NavItemLink/NavLinkButton";
+import { Link } from "../../components/Link/Link";
 import { siteStats } from "../../data/system";
 import { TiArrowRight } from "react-icons/ti";
 import "./Home.css";
+import { GradientLink } from "../../components/Link/GradientLink";
 
 export const Hero = () => {
   // console.log("siteStats", siteStats);
 
   return (
-    <section className="relative hero-section text-foreground py-20 md:py-32 transition-colors duration-300">
+    <section className="relative hero-section text-foreground py-20 bg-gradient-to-br from-blue-600 via-emerald-500 to-teal-600 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Side */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              <span className="hero-text-color1">
+              <span className="text-lime-100">
                 Discover Amazing Products from{" "}
               </span>
-              <span className="hero-text-color2">Multiple Vendors</span>
+              <span className="text-amber-400">Multiple Vendors</span>
             </h1>
 
-            <p className="mt-4 text-lg hero-text-color3 max-w-xl mx-auto md:mx-0">
+            <p className="mt-4 text-lg text-slate-300 max-w-xl mx-auto md:mx-0">
               Shop from thousands of products across multiple categories. Find
               the best deals from trusted vendors all in one place.
             </p>
 
             <div className="flex flex-row gap-2">
-              <NavLinkButton
+              {/* <Link
                 text="Explore Products"
                 variant="primary"
                 icon={TiArrowRight}
-                to={null}
-              />
-              <NavLinkButton
-                text="Explore Shop"
+                to="/products"
+              /> */}
+              <GradientLink
+                to="products"
+                icon={TiArrowRight}
+                iconPosition="right"
+                variant="orange"
+              >
+                Explore Products
+              </GradientLink>
+              {/* <Link
+                text="Explore Sellers"
                 variant="outline"
                 icon={null}
-                to={null}
-              />
+                to="/sellers"
+              /> */}
+              <GradientLink to="sellers" variant="slate" outline>
+                Explore Sellers
+              </GradientLink>
             </div>
 
             {/* Stats */}
@@ -51,10 +63,10 @@ export const Hero = () => {
                     key={index}
                     className="flex flex-col items-center md:items-start"
                   >
-                    <span className="text-4xl font-bold hero-text-color2">
+                    <span className="text-4xl font-bold text-slate-300">
                       {item.stat}
                     </span>
-                    <span className="mt-1 hero-text-color3 text-md capitalize">
+                    <span className="mt-1 text-sky-200 text-md capitalize">
                       {item.name}
                     </span>
                   </div>

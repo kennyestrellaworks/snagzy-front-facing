@@ -1,3 +1,4 @@
+import "./App.css";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -8,9 +9,9 @@ import { RootLayout } from "./layout/RootLayout";
 import { Home } from "./pages/home/Home";
 import { Signin } from "./pages/Signin";
 import { Signup } from "./pages/Signup";
-import Products from "./pages/Products";
+import Products from "./pages/products/Products";
 import Stores from "./pages/Stores";
-import "./App.css";
+import { Sellers } from "./pages/sellers/Sellers";
 
 export const App = () => {
   const router = createBrowserRouter(
@@ -18,6 +19,7 @@ export const App = () => {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="products" element={<Products />} />
+        <Route path="sellers" element={<Sellers />} />
         <Route path="stores" element={<Stores />} />
         <Route path="signin" element={<Signin />} />
         <Route path="signup" element={<Signup />} />

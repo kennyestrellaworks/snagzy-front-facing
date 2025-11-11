@@ -72,9 +72,9 @@
 
   /* Hero.jsx  */
   --hero-bg-color: var(--color-group-4f);
-  --hero-text-color1: var(--color-group-3e);
-  --hero-text-color2: var(--color-group-3d);
-  --hero-text-color3: var(--color-group-4c);
+  --hero-text-color1: var(--color-group-2e);
+  --hero-text-color2: var(--color-group-5a);
+  --hero-text-color3: var(--color-group-2b);
   --hero-text-color4: var(--color-group-5a);
 }
 

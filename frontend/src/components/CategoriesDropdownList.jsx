@@ -99,9 +99,11 @@ export const CategoriesDropdownList = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <NavLink
-          className={`category-btn flex items-center justify-between px-4 py-2 text-white font-semibold rounded-md shadow-md transition-colors duration-200 ${
-            isOpen ? "category-btn-hover" : null
+        <button
+          className={`bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 hover:scale-105 flex items-center justify-between px-6 py-2 text-white font-semibold rounded-lg shadow-md transform transition-all duration-200 ${
+            isOpen
+              ? "bg-gradient-to-r from-cyan-600 to-blue-700 scale-105"
+              : null
           }`}
         >
           Categories
@@ -110,7 +112,7 @@ export const CategoriesDropdownList = () => {
               isOpen ? "rotate-180" : "rotate-0"
             }`}
           />
-        </NavLink>
+        </button>
 
         {isOpen && (
           <div className="flex absolute left-0 mt-1 bg-white rounded-md shadow-lg border border-gray-200">

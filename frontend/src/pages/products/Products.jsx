@@ -1,6 +1,6 @@
-import React, { useMemo } from "react";
-import { products } from "../data/products";
-import { categories } from "../data/categories";
+import { useMemo } from "react";
+import { products } from "../../data/products";
+import { categories } from "../../data/categories";
 import { TiStar } from "react-icons/ti";
 import { useSearchParams } from "react-router-dom";
 

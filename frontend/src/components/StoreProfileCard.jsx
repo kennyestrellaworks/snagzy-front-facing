@@ -1,6 +1,7 @@
 import { BsBoxSeam } from "react-icons/bs";
 import { MdOutlineStar } from "react-icons/md";
 import { useData } from "../context/DataContext";
+import { GradientLink } from "./Link/GradientLink";
 
 export const StoreProfileCard = ({ stores }) => {
   const { getUserData } = useData();
@@ -14,7 +15,7 @@ export const StoreProfileCard = ({ stores }) => {
         return (
           <div
             key={index}
-            className="group relative overflow-hidden rounded-lg h-[470px] bg-card border hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col"
+            className="group relative overflow-hidden bg-white rounded-lg h-[490px] bg-card border hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col"
           >
             <div className="h-32 w-full flex-shrink-0">
               <img
@@ -70,12 +71,15 @@ export const StoreProfileCard = ({ stores }) => {
             </div>
 
             <div className="p-4 border-t border-gray-200 flex-shrink-0">
-              <button
+              {/* <button
                 data-slot="button"
                 className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-150 ease-in-out shadow-md"
               >
                 Visit Store
-              </button>
+              </button> */}
+              <GradientLink to="sellers" variant="violet">
+                View Store
+              </GradientLink>
             </div>
           </div>
         );

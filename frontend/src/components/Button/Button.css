@@ -1,0 +1,43 @@
+.btn-primary {
+  border: 2px solid oklch(from var(--navlink-btn-primary-border) l c h / 0.4);
+  background-color: oklch(from var(--navlink-btn-primary-bg-color) l c h / 0.9);
+  color: oklch(from var(--navlink-btn-primary-text-color) l c h / 0.8);
+}
+.btn-primary:hover {
+  border: 2px solid var(--navlink-btn-primary-border);
+  background-color: var(--navlink-btn-primary-bg-color);
+  color: var(--navlink-btn-primary-text-color);
+}
+.btn-outline {
+  /* border: 2px solid var(--navlink-btn-primary-border); */
+  border: 2px solid
+    color-mix(
+      in oklch,
+      var(--navlink-btn-primary-border) 60%,
+      var(--navlink-btn-outline-bg-color)
+    );
+  /* background-color: var(--navlink-btn-outline-bg-color); */
+  background-color: color-mix(
+    in oklch,
+    var(--navlink-btn-outline-bg-color) 90%,
+    var(--navlink-btn-primary-border)
+  );
+  color: var(--navlink-btn-primary-border);
+}
+.btn-outline:hover {
+  border: 2px solid var(--navlink-btn-primary-border);
+  background-color: var(--navlink-btn-outline-bg-color);
+  color: var(--navlink-btn-primary-border);
+}
+.btn-secondary {
+  border: 2px solid oklch(from var(--navlink-btn-secondary-border) l c h / 0.4);
+  background-color: oklch(
+    from var(--navlink-btn-secondary-bg-color) l c h / 0.8
+  );
+  color: oklch(from var(--navlink-btn-secondary-text-color) l c h / 0.8);
+}
+.btn-secondary:hover {
+  border: 2px solid var(--navlink-btn-secondary-border);
+  background-color: var(--navlink-btn-secondary-bg-color);
+  color: var(--navlink-btn-secondary-text-color);
+}

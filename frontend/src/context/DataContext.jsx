@@ -20,14 +20,14 @@ export const DataProvider = ({ children }) => {
   };
 
   // Product-related functions
+  const getProduct = (productId) => {
+    let product = products.find((p) => p._id === productId);
+    return product || null;
+  };
+
   const getProductImage = (productId) => {
     const product = products.find((p) => p._id === productId);
     return product?.gallery?.[0] || null;
-  };
-
-  const getProductById = (productId) => {
-    let product = products.find((p) => p._id === productId);
-    return product || null;
   };
 
   // Get top 10 featured products based on order data
@@ -50,7 +50,7 @@ export const DataProvider = ({ children }) => {
 
     // Get full product data for the top 10
     const featuredProducts = sortedProductIds
-      .map((productId) => getProductById(productId))
+      .map((productId) => getProduct(productId))
       .filter((product) => product !== null); // Remove any null products
 
     return featuredProducts;
@@ -66,7 +66,7 @@ export const DataProvider = ({ children }) => {
       getTopLevelCategories,
       getUserData,
       getProductImage,
-      getProductById,
+      getProduct,
       getFeaturedProducts,
       getStoreData,
     }),

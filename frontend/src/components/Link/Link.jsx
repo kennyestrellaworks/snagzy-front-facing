@@ -1,13 +1,7 @@
 import { NavLink } from "react-router-dom";
-import "./NavLinkButton.css";
+import "./Link.css";
 
-export const NavLinkButton = ({
-  text,
-  icon: Icon,
-  variant = "primary",
-  className = "",
-  to,
-}) => {
+export const Link = ({ text, icon: Icon, variant, className, to }) => {
   const baseStyle =
     "group flex items-center justify-center space-x-2 px-6 py-3 font-regular rounded-lg transition-all duration-300 transform shadow-md active:scale-98 focus:outline-none focus:ring-4";
 
@@ -15,17 +9,17 @@ export const NavLinkButton = ({
 
   switch (variant) {
     case "primary":
-      variantStyles = "nav-link-btn-primary";
+      variantStyles = "link-primary";
       break;
     case "secondary":
-      variantStyles = "nav-link-btn-secondary";
+      variantStyles = "link-secondary";
       break;
     case "success":
       variantStyles =
         "bg-green-600 text-white hover:bg-green-700 focus:ring-green-300";
       break;
     case "outline":
-      variantStyles = "nav-link-btn-outline";
+      variantStyles = "link-outline";
       break;
     default:
       variantStyles =
