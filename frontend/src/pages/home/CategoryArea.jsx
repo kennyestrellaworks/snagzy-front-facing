@@ -1,6 +1,7 @@
 import { TiArrowRight } from "react-icons/ti";
-import { NavLinkButton } from "../../components/NavItemLink/NavLinkButton";
+import { Button } from "../../components/Button/Button";
 import { categories } from "../../data/categories";
+import { GradientLink } from "../../components/Link/GradientLink";
 
 export const CategoryArea = () => {
   // Filter the array to get only the top-level categories
@@ -34,12 +35,21 @@ export const CategoryArea = () => {
                   <h3 className="text-white mb-1">{item.name}</h3>
                   <p className="text-sm text-white/80">245 products</p>
                   <div className="inline-flex items-center gap-2 text-sm mt-3 px-3 py-1.5 bg-secondary text-secondary-foreground rounded-md">
-                    <NavLinkButton
+                    {/* <Button
                       text="View All"
                       variant="outline"
                       icon={TiArrowRight}
                       to={null}
-                    />
+                    /> */}
+                    <GradientLink
+                      to="products"
+                      icon={TiArrowRight}
+                      iconPosition="right"
+                      variant="orange"
+                      size="sm"
+                    >
+                      View All
+                    </GradientLink>
                   </div>
                 </div>
               </div>

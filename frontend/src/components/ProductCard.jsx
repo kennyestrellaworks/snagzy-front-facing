@@ -1,6 +1,7 @@
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { MdOutlineStar } from "react-icons/md";
 import { useData } from "../context/DataContext";
+import { GradientButton } from "./Button/GradientButton";
 
 export const ProductCard = ({ products }) => {
   const isBookmarked = false;
@@ -88,16 +89,18 @@ export const ProductCard = ({ products }) => {
                 </div>
               </div>
 
-              <button
+              <GradientButton
+                to="sellers"
+                variant="orange"
+                size="sm"
                 className={`w-full py-2 px-4 rounded-md font-medium transition-colors ${
                   item.stock > 0
-                    ? "bg-blue-600 text-white hover:bg-blue-700"
+                    ? ""
                     : "bg-gray-300 text-gray-500 cursor-not-allowed"
                 }`}
-                disabled={item.stock === 0}
               >
                 {item.stock > 0 ? "Add to Cart" : "Out of Stock"}
-              </button>
+              </GradientButton>
             </div>
           </div>
         );
