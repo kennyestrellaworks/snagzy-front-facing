@@ -11,7 +11,7 @@ export const FeaturedProducts = () => {
     const loadFeaturedProducts = async () => {
       setLoading(true);
       try {
-        const products = await getFeaturedProducts();
+        const products = await getFeaturedProducts(12);
         setFeaturedProducts(products);
       } catch (error) {
         console.error("Failed to load featured products:", error);
@@ -30,7 +30,7 @@ export const FeaturedProducts = () => {
   }
 
   return (
-    <section className="relative shop-by-category-section text-foreground py-20 transition-colors duration-300">
+    <section className="relative bg-[#FCDDE4] text-foreground py-20 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="flex flex-col">
           <h1 className="text-[2rem] font-semibold">Featured Products</h1>

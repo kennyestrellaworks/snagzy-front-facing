@@ -47,7 +47,7 @@ export const Navbar = () => {
       {/* Right side  */}
       <div className="flex flex-row items-center gap-1">
         {/* Theme toggle / switcher  */}
-        <ThemesDropdownList />
+        {/* <ThemesDropdownList /> */}
 
         {/* Bookmark button */}
         <IconButton Icon={FaRegHeart} />

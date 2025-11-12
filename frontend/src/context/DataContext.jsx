@@ -31,7 +31,7 @@ export const DataProvider = ({ children }) => {
   };
 
   // Get top 10 featured products based on order data
-  const getFeaturedProducts = () => {
+  const getFeaturedProducts = (limit) => {
     const productCount = {};
 
     orders.forEach((order) => {
@@ -46,7 +46,7 @@ export const DataProvider = ({ children }) => {
     const sortedProductIds = Object.entries(productCount)
       .sort(([, countA], [, countB]) => countB - countA)
       .map(([productId]) => productId)
-      .slice(0, 12); // Set number limit here, example top 10
+      .slice(0, limit); // Set number limit here, example top 10
 
     // Get full product data for the top 10
     const featuredProducts = sortedProductIds

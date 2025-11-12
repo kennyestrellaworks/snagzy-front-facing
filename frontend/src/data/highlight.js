@@ -2,10 +2,9 @@ export const highlightProducts = [
   {
     _id: "highlightproduct5483167284mbncswfirh",
     productId: "product66e929400051dc2c4fa6525b",
-    title: "Asics Gel-Kayano 28",
     color: "#fdc4bd",
-    subtitle:
-      "Stability running shoe with responsive GEL technology, designed for overpronators. It offers superior support and cushioning.",
+    type: "primary",
+    status: "active",
     image:
       "https://res.cloudinary.com/davjgeymf/image/upload/v1762846613/asfdsfwscxcdfsdf_skjbtc.png",
     createdBy: "people43210987nopqrstu",
@@ -15,10 +14,9 @@ export const highlightProducts = [
   {
     _id: "highlightproduct8426157983bncofjdmei",
     productId: "product66e930580051dc2c4fa652ca",
-    title: "Ray-Ban Aviator Classic",
     color: "#bfa0ed",
-    subtitle:
-      "Iconic aviator sunglasses with a metal frame and polarized lenses, offering timeless style and UV protection.",
+    type: "primary",
+    status: "active",
     image:
       "https://res.cloudinary.com/davjgeymf/image/upload/v1762846612/sdafdsfsadfgfdghgdfg_d34wwi.png",
     createdBy: "people43210987nopqrstu",
@@ -28,10 +26,9 @@ export const highlightProducts = [
   {
     _id: "highlightproduct9612342578vmzkdofplw",
     productId: "product66e92ef60051dc2c4fa652aa",
-    title: "Adidas Originals Trefoil Tee",
     color: "#a3d8b0",
-    subtitle:
-      "Iconic Adidas Trefoil logo on a soft cotton t-shirt, offering timeless style and comfort.",
+    type: "primary",
+    status: "active",
     image:
       "https://res.cloudinary.com/davjgeymf/image/upload/v1762846612/xvxvdfgsdfdsf_tpjfdb.png",
     createdBy: "people43210987nopqrstu",
@@ -41,12 +38,36 @@ export const highlightProducts = [
   {
     _id: "highlightproduct6214321876nvzxwsjfgu",
     productId: "product66e92ef60051dc2c4fa652aa",
-    title: "Yves Saint Laurent Kate Bag",
     color: "#bfa0ed",
-    subtitle:
-      "Classic chain bag with the iconic YSL logo and tassel detail, crafted from premium leather for a glamorous finish.",
+    type: "primary",
+    status: "active",
     image:
       "https://res.cloudinary.com/davjgeymf/image/upload/v1762846612/saffdfghjg_sqsgdj.png",
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2024-09-17T07:02:33.734Z",
+    updatedAt: "2024-09-17T07:02:33.734Z",
+  },
+  {
+    _id: "highlightproduct5315678154vlgodnvher",
+    productId: "product66e931ea0051dc2c4fa652ec",
+    color: "#f0bbf1",
+    type: "secondary",
+    status: "active",
+    image:
+      "https://res.cloudinary.com/davjgeymf/image/upload/v1762924343/tyruffgfdg_dkcv4v.png",
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2024-09-17T07:02:33.734Z",
+    updatedAt: "2024-09-17T07:02:33.734Z",
+  },
+
+  {
+    _id: "highlightproduct2486134853bnwachulov",
+    productId: "product66e92d670051dc2c4fa6528e",
+    color: "#c4b9c4",
+    type: "secondary",
+    status: "active",
+    image:
+      "https://res.cloudinary.com/davjgeymf/image/upload/v1762924537/mngjhfsfgdsg_n9rva9.png",
     createdBy: "people43210987nopqrstu",
     createdAt: "2024-09-17T07:02:33.734Z",
     updatedAt: "2024-09-17T07:02:33.734Z",
