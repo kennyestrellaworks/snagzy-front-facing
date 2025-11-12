@@ -1,4 +1,13 @@
-import { Facebook, Instagram, Youtube } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Youtube,
+  TruckElectric,
+  RotateCcw,
+  ShieldCheck,
+  Gift,
+  Headset,
+} from "lucide-react";
 
 export const themeOptions = [
   {
@@ -76,6 +85,69 @@ export const footerCompanyLinks = [
     _id: "footerlink2487954345dwvnhiopsd",
     name: "Affiliates",
     slug: "affiliates",
+  },
+];
+
+export const features = [
+  {
+    _id: "features6248625437nxdjulpsve",
+    icon: TruckElectric,
+    title: "Free Shipping",
+    description: "For all Orders Over $100",
+    color: "from-blue-500 to-cyan-500",
+    bgColor: "bg-blue-50",
+    iconColor: "text-blue-500",
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2024-09-17T07:02:33.734Z",
+    updatedAt: "2024-09-17T07:02:33.734Z",
+  },
+  {
+    _id: "features5179543126bsegtogjvn",
+    icon: RotateCcw,
+    title: "30 Days Returns",
+    description: "For an Exchange Product",
+    color: "from-emerald-500 to-teal-500",
+    bgColor: "bg-emerald-50",
+    iconColor: "text-emerald-500",
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2024-09-17T07:02:33.734Z",
+    updatedAt: "2024-09-17T07:02:33.734Z",
+  },
+  {
+    _id: "features7512342642xkfirsfgqog",
+    icon: ShieldCheck,
+    title: "Secured Payment",
+    description: "Payment Cards Accepted",
+    color: "from-purple-500 to-pink-500",
+    bgColor: "bg-purple-50",
+    iconColor: "text-orange-500",
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2024-09-17T07:02:33.734Z",
+    updatedAt: "2024-09-17T07:02:33.734Z",
+  },
+  {
+    _id: "features6248731542mxofgkelvn",
+    icon: Gift,
+    title: "Special Gifts",
+    description: "Our First Product Order",
+    color: "from-orange-500 to-red-500",
+    bgColor: "bg-orange-50",
+    iconColor: "text-orange-500",
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2024-09-17T07:02:33.734Z",
+    updatedAt: "2024-09-17T07:02:33.734Z",
+  },
+  {
+    _id: "features9248561328zdehtvsftk",
+    icon: Headset,
+    title: "Support 24/7",
+    description: "Contact us Anytime",
+    color: "from-indigo-500 to-blue-500",
+    bgColor: "bg-indigo-50",
+    iconColor: "text-indigo-500",
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2024-09-17T07:02:33.734Z",
+    updatedAt: "2024-09-17T07:02:33.734Z",
   },
 ];
 

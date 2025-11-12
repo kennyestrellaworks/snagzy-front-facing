@@ -6,9 +6,20 @@ import { useData } from "../../context/DataContext";
 
 export const HighlightArea = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = highlightProducts.length;
+
   const AUTO_ADVANCE_DELAY = 5000; // 5 seconds
   const { getProduct } = useData();
+
+  const primaryHighlight = highlightProducts.filter((item) => {
+    return item.type === "primary";
+  });
+  // console.log("primaryHighlight", primaryHighlight);
+  // console.log("primaryHighlight", primaryHighlight.length);
+  const totalSlides = primaryHighlight.length;
+
+  const secondaryHighlight = highlightProducts.filter((item) => {
+    return item.type === "secondary";
+  });
 
   // Function to move to the next slide, wrapping around
   const nextSlide = useCallback(() => {
@@ -39,18 +50,17 @@ export const HighlightArea = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col">
           <h1 className="text-[2rem] font-semibold">Best Deals</h1>
+          <p className="text-lg mt-1">Shop from our best deals for today</p>
         </div>
-        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6 items-start mt-12">
           <div className="lg:col-span-2">
             {/* Existing Carousel Outer Container */}
             <div
               className={`relative w-full shadow-md rounded-xl overflow-hidden transition-colors duration-1000`}
             >
               {/* Carousel Content Container */}
-              <div
-                className={`relative h-[300px] sm:h-[400px] overflow-hidden`}
-              >
-                {highlightProducts.map((item, index) => {
+              <div className={`relative h-[400px] overflow-hidden`}>
+                {primaryHighlight.map((item, index) => {
                   const product = getProduct(item.productId);
                   return (
                     <div
@@ -118,10 +128,10 @@ export const HighlightArea = () => {
 
                           <div className="flex flex-col mt-4">
                             <h2 className="text-2xl sm:text-3xl font-bold mb-2 drop-shadow-lg">
-                              {item.title}
+                              {product.name}
                             </h2>
                             <p className="text-base sm:text-xl drop-shadow-lg font-light">
-                              {item.subtitle}
+                              {product.description}
                             </p>
                           </div>
                           <div className="flex mt-6">
@@ -170,7 +180,7 @@ export const HighlightArea = () => {
 
                 {/* Indicators (Dots) */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-                  {highlightProducts.map((_, index) => (
+                  {primaryHighlight.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => handleIndicatorClick(index)}
@@ -192,28 +202,89 @@ export const HighlightArea = () => {
           </div>
 
           {/* RIGHT COLUMN (panels auto-match left height) */}
-          <div className="lg:col-span-1 flex flex-col justify-between h-full">
-            {/* Top Panel */}
-            <div className="flex-1 p-6 bg-white shadow-xl rounded-xl flex flex-col items-center justify-center border-t-8 border-t-indigo-600">
-              <h3 className="text-xl font-extrabold text-indigo-700 mb-2">
-                Side Panel Top
-              </h3>
-              <p className="text-gray-600 text-center">
-                This space can hold supplementary content, quick stats, or
-                advertisements.
-              </p>
-            </div>
+          <div className="lg:col-span-1 flex flex-col justify-between h-full gap-6">
+            {secondaryHighlight.map((item, index) => {
+              const product = getProduct(item.productId);
+              return (
+                <div
+                  key={index}
+                  className="flex-1 bg-white rounded-xl overflow-hidden shadow-xl items-center justify-center"
+                >
+                  <div
+                    className="w-full h-full bg-gray-100 rounded-3xl flex flex-col md:flex-row items-center shadow-lg"
+                    style={{
+                      backgroundColor: item.color,
+                    }}
+                  >
+                    {/* Image Section */}
+                    <div className="relative overflow-hidden h-full w-full">
+                      {/* Gradient Overlay */}
+                      <div
+                        className="absolute inset-0 z-0"
+                        style={{
+                          backgroundImage: `linear-gradient(100deg, ${item.color} 0%, ${item.color} 60%, transparent 26%)`,
+                          opacity: 1,
+                          filter: "brightness(0.7)",
+                        }}
+                        aria-hidden="true"
+                      ></div>
 
-            {/* Bottom Panel */}
-            <div className="flex-1 p-6 bg-white shadow-xl rounded-xl flex flex-col items-center justify-center border-t-8 border-t-green-600 mt-6">
-              <h3 className="text-xl font-extrabold text-green-700 mb-2">
-                Side Panel Bottom
-              </h3>
-              <p className="text-gray-600 text-center">
-                The layout adjusts automatically to stack content vertically on
-                mobile.
-              </p>
-            </div>
+                      {/* Image — now positioned */}
+                      <img
+                        src={item.image}
+                        alt="Sample"
+                        className="w-full h-full rounded-2xl relative z-10 object-cover"
+                      />
+                    </div>
+
+                    {/* Text Section */}
+                    <div className="space-y-4 w-[620px] mr-6">
+                      <div className="flex flex-col">
+                        <div className="flex items-center gap-2">
+                          <p
+                            className="relative inline-block text-white font-semibold px-3 rounded-md shadow-md overflow-hidden"
+                            style={{ backgroundColor: item.color }}
+                          >
+                            <span className="relative z-10 text-[12px]">
+                              ${product.price}
+                            </span>
+                            <span className="absolute inset-0 bg-black/20"></span>
+                          </p>
+
+                          <p className="text-slate-600 text-[14px]">
+                            {product.stock > 0
+                              ? `${product.stock} in stock`
+                              : "Out of Stock"}
+                          </p>
+                        </div>
+                        <h2 className="text-lg mt-2 font-bold drop-shadow-lg leading-tight">
+                          {product.name}
+                        </h2>
+                        <p className="text-gray-600 text-[14px]">
+                          {product.description.length > 50
+                            ? product.description.slice(0, 50) + "..."
+                            : product.description}
+                        </p>
+                      </div>
+                      <div className="flex mt-6">
+                        <GradientButton
+                          to="sellers"
+                          variant="orange"
+                          size="sm"
+                          className={`py-2 px-4 rounded-md font-medium transition-colors ${
+                            product.stock > 0
+                              ? ""
+                              : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          }`}
+                        >
+                          {product.stock > 0 ? "Add to Cart" : "Out of Stock"}
+                        </GradientButton>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -2,14 +2,38 @@ import image1 from "../../assets/images/photo-1505740420928-5e560c06d30e.jpg";
 import image2 from "../../assets/images/photo-1576697010739-6373b63f3204.jpg";
 import image3 from "../../assets/images/photo-1579586337278-3befd40fd17a.jpg";
 import image4 from "../../assets/images/photo-1597892657493-6847b9640bac.jpg";
-import { Link } from "../../components/Link/Link";
 import { siteStats } from "../../data/system";
 import { TiArrowRight } from "react-icons/ti";
 import "./Home.css";
 import { GradientLink } from "../../components/Link/GradientLink";
+import { useData } from "../../context/DataContext";
+import { useEffect, useState } from "react";
+import { GradientButton } from "../../components/Button/GradientButton";
 
 export const Hero = () => {
-  // console.log("siteStats", siteStats);
+  const { getFeaturedProducts } = useData();
+  const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadFeaturedProducts = async () => {
+      setLoading(true);
+      try {
+        const products = await getFeaturedProducts(4);
+        setFeaturedProducts(products);
+      } catch (error) {
+        console.error("Failed to load featured products:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadFeaturedProducts();
+  }, [getFeaturedProducts]);
+
+  if (loading) {
+    return <div>Loading 4 products...</div>;
+  }
 
   return (
     <section className="relative hero-section text-foreground py-20 bg-gradient-to-br from-blue-600 via-emerald-500 to-teal-600 transition-colors duration-300">
@@ -30,12 +54,6 @@ export const Hero = () => {
             </p>
 
             <div className="flex flex-row gap-2">
-              {/* <Link
-                text="Explore Products"
-                variant="primary"
-                icon={TiArrowRight}
-                to="/products"
-              /> */}
               <GradientLink
                 to="products"
                 icon={TiArrowRight}
@@ -44,12 +62,6 @@ export const Hero = () => {
               >
                 Explore Products
               </GradientLink>
-              {/* <Link
-                text="Explore Sellers"
-                variant="outline"
-                icon={null}
-                to="/sellers"
-              /> */}
               <GradientLink to="sellers" variant="slate" outline>
                 Explore Sellers
               </GradientLink>
@@ -78,38 +90,52 @@ export const Hero = () => {
           {/* Right Side (Images) */}
           <div className="hidden md:block">
             <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="aspect-square rounded-lg bg-secondary overflow-hidden">
-                  <img
-                    src={image1}
-                    alt="Featured product"
-                    className="w-full h-full object-cover"
-                  />
+              {/* Items  */}
+              {featuredProducts.map((item, index) => (
+                <div
+                  key={index}
+                  className="aspect-square rounded-lg bg-secondary overflow-hidden flex flex-col"
+                >
+                  <div className="relative flex-1">
+                    <div className="absolute top-0 right-0">
+                      <p className="py-1 px-4 bg-green-500 text-white text-lg font-semibold rounded-bl-lg">
+                        ${item.price}
+                      </p>
+                    </div>
+                    <img
+                      src={item.gallery[0]}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
+
+                    {/* Dark overlay with text */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-white/70 p-3">
+                      <h1 className="text-lg font-semibold truncate">
+                        {item.name}
+                      </h1>
+                      <p className="text-sm opacity-90 line-clamp-2">
+                        {item.description}
+                      </p>
+                      <div className="mt-4">
+                        <GradientButton
+                          to="sellers"
+                          variant="orange"
+                          size="sm"
+                          className={`w-full py-2 px-4 rounded-md font-medium transition-colors ${
+                            item.stock > 0
+                              ? ""
+                              : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          }`}
+                        >
+                          {item.stock > 0 ? "Add to Cart" : "Out of Stock"}
+                        </GradientButton>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="aspect-square rounded-lg bg-accent overflow-hidden">
-                  <img
-                    src={image2}
-                    alt="Featured product"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              <div className="space-y-4 pt-8">
-                <div className="aspect-square rounded-lg bg-accent overflow-hidden">
-                  <img
-                    src={image3}
-                    alt="Featured product"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-square rounded-lg bg-secondary overflow-hidden">
-                  <img
-                    src={image4}
-                    alt="Featured product"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+              ))}
+
+              {/* Items  */}
             </div>
           </div>
         </div>
