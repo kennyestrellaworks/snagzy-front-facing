@@ -19,7 +19,7 @@ export const CategoryArea = () => {
           </p>
         </div>
         {/* Card  */}
-        <div className="grid md:grid-cols-5 mt-12 gap-2 items-center">
+        <div className="grid md:grid-cols-6 mt-12 gap-2 items-center">
           {topLevelCategories.map((item, index) => {
             return (
               <div

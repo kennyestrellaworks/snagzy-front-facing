@@ -27,7 +27,7 @@ export const Footer = () => {
                 <img src={logo} alt="Snagzy logo" className="h-[2rem]" />
               </Link>
             </div>
-            <p className="text-slate-800 mb-4 mt-4">
+            <p className="text-slate-800 mb-4 mt-4 text-left">
               Snagzy is a versatile and scalable e-commerce platform designed
               for modern retail. Its core strength lies in its multi-store
               capability, allowing users to launch, manage, and scale several
