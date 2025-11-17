@@ -7,7 +7,7 @@ export const categories = [
     slug: "electronics",
     parent_id: null,
     isActive: true,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2024-07-01T04:00:00Z",
     updatedAt: "2025-07-25T01:22:00Z",
     image: [
@@ -23,7 +23,7 @@ export const categories = [
 
     parent_id: "category12362849njilcedh",
     isActive: true,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2023-03-08T06:00:00Z",
     updatedAt: "2025-07-24T19:00:00Z",
     image: [],
@@ -37,7 +37,7 @@ export const categories = [
 
     parent_id: "category12362849njilcedh",
     isActive: true,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2023-04-22T19:00:00Z",
     updatedAt: "2025-07-25T00:30:00Z",
     image: [],
@@ -51,12 +51,38 @@ export const categories = [
 
     parent_id: null,
     isActive: true,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2024-02-05T09:00:00Z",
     updatedAt: "2025-07-24T15:00:00Z",
     image: [
       "https://res.cloudinary.com/davjgeymf/image/upload/v1760550935/clothing_taislq.jpg",
     ],
+  },
+  {
+    _id: "category92362849lopkijuh",
+    name: "Sportswear",
+    description:
+      "Modern and functional sportswear, featuring activewear, training gear, performance apparel, and essential accessories for every workout and lifestyle.",
+    slug: "sportswear",
+    parent_id: "category92658435pocveqyf",
+    isActive: true,
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2023-01-20T14:45:00Z",
+    updatedAt: "2025-06-10T05:00:00Z",
+    image: [],
+  },
+  {
+    _id: "category82362849yhnujmik",
+    name: "Kid's Clothing",
+    description:
+      "Stylish and comfortable kid's clothing, featuring everyday wear, playful outfits, cozy essentials, and trendy accessories.",
+    slug: "kids-clothing",
+    parent_id: "category92658435pocveqyf",
+    isActive: true,
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2023-01-20T14:45:00Z",
+    updatedAt: "2025-06-10T05:00:00Z",
+    image: [],
   },
   {
     _id: "category75144628lkionhyd",
@@ -67,7 +93,7 @@ export const categories = [
 
     parent_id: "category92658435pocveqyf",
     isActive: true,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2023-01-20T14:45:00Z",
     updatedAt: "2025-06-10T05:00:00Z",
     image: [],
@@ -81,7 +107,7 @@ export const categories = [
 
     parent_id: "category92658435pocveqyf",
     isActive: true,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2024-05-01T09:30:00Z",
     updatedAt: "2025-07-25T01:18:00Z",
     image: [],
@@ -95,7 +121,7 @@ export const categories = [
 
     parent_id: null,
     isActive: false,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2023-08-17T15:00:00Z",
     updatedAt: "2025-07-24T23:00:00Z",
     image: [
@@ -111,7 +137,7 @@ export const categories = [
 
     parent_id: null,
     isActive: true,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2024-08-17T15:00:00Z",
     updatedAt: "2025-07-24T23:00:00Z",
     image: [
@@ -127,7 +153,7 @@ export const categories = [
 
     parent_id: "category68124457liimvjdr",
     isActive: true,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2024-08-17T15:00:00Z",
     updatedAt: "2025-07-24T23:00:00Z",
     image: [],
@@ -141,7 +167,7 @@ export const categories = [
 
     parent_id: "category68124457liimvjdr",
     isActive: true,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2024-08-17T15:00:00Z",
     updatedAt: "2025-07-24T23:00:00Z",
     image: [],
@@ -154,7 +180,7 @@ export const categories = [
     slug: "bags",
     parent_id: null,
     isActive: true,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2024-08-17T15:00:00Z",
     updatedAt: "2025-07-24T23:00:00Z",
     image: [
@@ -169,7 +195,7 @@ export const categories = [
     slug: "tote-bags",
     parent_id: "category42336157hescuyml",
     isActive: true,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2024-08-17T15:00:00Z",
     updatedAt: "2025-07-24T23:00:00Z",
     image: [],
@@ -182,9 +208,90 @@ export const categories = [
     slug: "shoulder-bags",
     parent_id: "category42336157hescuyml",
     isActive: true,
-    createdBy: "user43210987nopqrstu",
+    createdBy: "people43210987nopqrstu",
     createdAt: "2024-08-17T15:00:00Z",
     updatedAt: "2025-07-24T23:00:00Z",
     image: [],
+  },
+  {
+    _id: "category72362849zxcvbnml",
+    name: "Slippers",
+    description:
+      "Soft and cozy footwear made for relaxation and easy comfort at home or on the go.",
+    slug: "slippers",
+    parent_id: "category22362849nijlcdeh",
+    isActive: true,
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2023-03-08T06:00:00Z",
+    updatedAt: "2025-07-24T19:00:00Z",
+    image: [],
+  },
+  {
+    _id: "category62362849ujmkolph",
+    name: "Formal Shoes",
+    description:
+      "Classic, elegant shoes crafted for business, special events, and refined style.",
+    slug: "formal-shoes",
+    parent_id: "category22362849nijlcdeh",
+    isActive: true,
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2023-03-08T06:00:00Z",
+    updatedAt: "2025-07-24T19:00:00Z",
+    image: [],
+  },
+  {
+    _id: "category52362849tgbvfdrh",
+    name: "Women's Shoes",
+    description:
+      "Trendy and comfortable footwear that blends fashion, function, and everyday confidence.",
+    slug: "womens-shoes",
+
+    parent_id: "category22362849nijlcdeh",
+    isActive: true,
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2023-03-08T06:00:00Z",
+    updatedAt: "2025-07-24T19:00:00Z",
+    image: [],
+  },
+  {
+    _id: "category42362849qwejzmnx",
+    name: "Men's Shoes",
+    description:
+      "Stylish and versatile shoes for every occasion, from casual wear to formal events.",
+    slug: "mens-shoes",
+    parent_id: "category22362849nijlcdeh",
+    isActive: true,
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2023-03-08T06:00:00Z",
+    updatedAt: "2025-07-24T19:00:00Z",
+    image: [],
+  },
+  {
+    _id: "category32362849plkdrtgh",
+    name: "Sports Shoes",
+    description:
+      "Performance-driven footwear designed for comfort, durability, and maximum athletic support during any activity.",
+    slug: "sports-shoes",
+    parent_id: "category22362849nijlcdeh",
+    isActive: true,
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2023-03-08T06:00:00Z",
+    updatedAt: "2025-07-24T19:00:00Z",
+    image: [],
+  },
+  {
+    _id: "category22362849nijlcdeh",
+    name: "Footwear",
+    description:
+      "Step into comfort and style with our collection of footwear — from sneakers and running shoes to formal shoes, sandals, and boots for every occasion.",
+    slug: "footwear",
+    parent_id: null,
+    isActive: true,
+    createdBy: "people43210987nopqrstu",
+    createdAt: "2024-07-01T04:00:00Z",
+    updatedAt: "2025-07-25T01:22:00Z",
+    image: [
+      "https://res.cloudinary.com/davjgeymf/image/upload/v1763004058/afsdgfgfdcdsaeafads356435_mzcxlq.jpg",
+    ],
   },
 ];

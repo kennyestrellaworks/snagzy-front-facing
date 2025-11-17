@@ -1,7 +1,3 @@
-import image1 from "../../assets/images/photo-1505740420928-5e560c06d30e.jpg";
-import image2 from "../../assets/images/photo-1576697010739-6373b63f3204.jpg";
-import image3 from "../../assets/images/photo-1579586337278-3befd40fd17a.jpg";
-import image4 from "../../assets/images/photo-1597892657493-6847b9640bac.jpg";
 import { siteStats } from "../../data/system";
 import { TiArrowRight } from "react-icons/ti";
 import "./Home.css";
@@ -12,32 +8,60 @@ import { GradientButton } from "../../components/Button/GradientButton";
 
 export const Hero = () => {
   const { getFeaturedProducts } = useData();
-  const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [featuredProductsList, setFeaturedProductsList] = useState([]);
+  const [displayedProducts, setDisplayedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [animating, setAnimating] = useState(false);
 
+  // Fetch 12 products once
   useEffect(() => {
     const loadFeaturedProducts = async () => {
       setLoading(true);
       try {
-        const products = await getFeaturedProducts(4);
-        setFeaturedProducts(products);
+        const products = await getFeaturedProducts(12);
+        setFeaturedProductsList(products);
+        setDisplayedProducts(getRandomProducts(products, 4));
       } catch (error) {
         console.error("Failed to load featured products:", error);
       } finally {
         setLoading(false);
       }
     };
-
     loadFeaturedProducts();
   }, [getFeaturedProducts]);
 
+  // Rotate every few seconds
+  useEffect(() => {
+    if (featuredProductsList.length === 0) return;
+
+    const interval = setInterval(() => {
+      setAnimating(true);
+
+      // fade out first
+      setTimeout(() => {
+        const newProducts = getRandomProducts(featuredProductsList, 4);
+        setDisplayedProducts(newProducts);
+        setAnimating(false);
+      }, 800);
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, [featuredProductsList]);
+
+  const getRandomProducts = (list, count) => {
+    const shuffled = [...list].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
+
   if (loading) {
-    return <div>Loading 4 products...</div>;
+    return (
+      <div className="text-white text-center py-12">Loading products...</div>
+    );
   }
 
   return (
-    <section className="relative hero-section text-foreground py-20 bg-gradient-to-br from-blue-600 via-emerald-500 to-teal-600 transition-colors duration-300">
-      <div className="container mx-auto px-4">
+    <section className="relative hero-section text-foreground bg-gradient-to-br from-blue-600 via-emerald-500 to-teal-600 transition-colors duration-300">
+      <div className="container flex mx-auto px-4 h-screen">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Side */}
           <div className="space-y-6">
@@ -69,73 +93,89 @@ export const Hero = () => {
 
             {/* Stats */}
             <div className="flex gap-8 pt-4">
-              {siteStats.map((item, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center md:items-start"
-                  >
-                    <span className="text-4xl font-bold text-slate-300">
-                      {item.stat}
-                    </span>
-                    <span className="mt-1 text-sky-200 text-md capitalize">
-                      {item.name}
-                    </span>
-                  </div>
-                );
-              })}
+              {siteStats.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center md:items-start"
+                >
+                  <span className="text-4xl font-bold text-slate-300">
+                    {item.stat}
+                  </span>
+                  <span className="mt-1 text-sky-200 text-md capitalize">
+                    {item.name}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Right Side (Images) */}
-          <div className="hidden md:block">
-            <div className="grid grid-cols-2 gap-4">
-              {/* Items  */}
-              {featuredProducts.map((item, index) => (
-                <div
-                  key={index}
-                  className="aspect-square rounded-lg bg-secondary overflow-hidden flex flex-col"
-                >
-                  <div className="relative flex-1">
-                    <div className="absolute top-0 right-0">
-                      <p className="py-1 px-4 bg-green-500 text-white text-lg font-semibold rounded-bl-lg">
-                        ${item.price}
-                      </p>
-                    </div>
-                    <img
-                      src={item.gallery[0]}
-                      alt={item.name}
-                      className="w-full h-full object-cover"
-                    />
+          <div className="hidden md:block relative h-full w-full">
+            {/* Persistent dark placeholders (behind everything) */}
+            <div className="absolute top-[-40px] left-0 h-full w-full flex items-center z-0">
+              <div className="grid grid-cols-2 gap-4 w-full">
+                {Array(4)
+                  .fill(0)
+                  .map((_, i) => (
+                    <div
+                      key={i}
+                      className="aspect-square rounded-lg bg-black/30 animate-pulse"
+                    ></div>
+                  ))}
+              </div>
+            </div>
 
-                    {/* Dark overlay with text */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-white/70 p-3">
-                      <h1 className="text-lg font-semibold truncate">
-                        {item.name}
-                      </h1>
-                      <p className="text-sm opacity-90 line-clamp-2">
-                        {item.description}
-                      </p>
-                      <div className="mt-4">
-                        <GradientButton
-                          to="sellers"
-                          variant="orange"
-                          size="sm"
-                          className={`w-full py-2 px-4 rounded-md font-medium transition-colors ${
-                            item.stock > 0
-                              ? ""
-                              : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                          }`}
-                        >
-                          {item.stock > 0 ? "Add to Cart" : "Out of Stock"}
-                        </GradientButton>
+            {/* Real products fade in/out over placeholders */}
+            <div className="absolute top-[-40px] left-0 h-full w-full flex items-center z-10">
+              <div
+                className={`grid grid-cols-2 gap-4 w-full transition-opacity duration-700 ${
+                  animating ? "opacity-0" : "opacity-100"
+                }`}
+              >
+                {displayedProducts.map((item, index) => (
+                  <div
+                    key={index}
+                    className="aspect-square rounded-lg bg-secondary overflow-hidden flex flex-col"
+                  >
+                    <div className="relative flex-1">
+                      <div className="absolute top-0 right-0">
+                        <p className="py-1 px-4 bg-green-500 text-white text-lg font-semibold rounded-bl-lg">
+                          ${item.price}
+                        </p>
+                      </div>
+                      <img
+                        src={item.gallery[0]}
+                        alt={item.name}
+                        className="w-full h-full object-cover"
+                      />
+
+                      <div className="absolute bottom-0 left-0 right-0 bg-white/60 text-slate-800 p-3 rounded-bl-lg">
+                        <h1 className="text-lg font-semibold truncate">
+                          {item.name}
+                        </h1>
+                        <p className="text-sm opacity-90 line-clamp-2">
+                          {item.description}
+                        </p>
+                        <div className="flex mt-3 items-center">
+                          <GradientButton
+                            to="sellers"
+                            variant="orange"
+                            size="sm"
+                            className={`py-2 px-4 rounded-md font-medium transition-colors ${
+                              item.stock > 0
+                                ? ""
+                                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                            }`}
+                          >
+                            {item.stock > 0 ? "Add to Cart" : "Out of Stock"}
+                          </GradientButton>
+                          <p className="ml-2">{item.stock} in stock</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-
-              {/* Items  */}
+                ))}
+              </div>
             </div>
           </div>
         </div>

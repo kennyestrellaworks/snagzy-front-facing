@@ -12,7 +12,7 @@ export const products = [
     tags: [],
     variants: [],
     gallery: [
-      "https://res.cloudinary.com/davjgeymf/image/upload/v1751445650/856245dbrfse_roytyr.jpg",
+      "https://res.cloudinary.com/davjgeymf/image/upload/v1763018217/afdafdsfwsvsfsafdf_taa3h9.jpg",
     ],
     createdBy: "user43210987nopqrstu",
     createdAt: "2024-09-17T07:02:33.734Z",
@@ -43,7 +43,7 @@ export const products = [
     tags: [],
     variants: [],
     gallery: [
-      "https://res.cloudinary.com/davjgeymf/image/upload/v1751445808/214686dbchusl_v2svhf.jpg",
+      "https://res.cloudinary.com/davjgeymf/image/upload/v1763029632/asdfddvbdfgret352435_y2pavf.jpg",
     ],
     createdBy: "user43210987nopqrstu",
     createdAt: "2024-09-17T07:02:33.734Z",
@@ -74,7 +74,7 @@ export const products = [
     tags: [],
     variants: [],
     gallery: [
-      "https://res.cloudinary.com/davjgeymf/image/upload/v1751445924/332586nndxky_c4v0tx.jpg",
+      "https://res.cloudinary.com/davjgeymf/image/upload/v1763031958/ghjgfddsgffvbxcvxv_rn2o4z.jpg",
     ],
     createdBy: "user43210987nopqrstu",
     createdAt: "2024-09-17T07:02:33.734Z",
@@ -105,7 +105,7 @@ export const products = [
     tags: [],
     variants: [],
     gallery: [
-      "https://res.cloudinary.com/davjgeymf/image/upload/v1751445964/236845vnifuhg_lyc78a.jpg",
+      "https://res.cloudinary.com/davjgeymf/image/upload/v1763033610/asdfgdshfjgfcvbdcv_lzxnfw.jpg",
     ],
     createdBy: "user43210987nopqrstu",
     createdAt: "2024-09-17T07:18:13.831Z",
@@ -136,7 +136,7 @@ export const products = [
     tags: [],
     variants: [],
     gallery: [
-      "https://res.cloudinary.com/davjgeymf/image/upload/v1751446023/483517edfvgn_f8skxj.jpg",
+      "https://res.cloudinary.com/davjgeymf/image/upload/v1763037148/gfhdfdaedf6876535fdgfdgdg_utmwmq.jpg",
     ],
     createdBy: "user43210987nopqrstu",
     createdAt: "2024-09-17T07:18:13.831Z",
@@ -445,7 +445,6 @@ export const products = [
     categories: [
       "category92658435pocveqyf",
       "category75144628lkionhyd",
-      "category92658435pocveqyf",
       "category64258437zefjiyuo",
     ],
     tags: [],
@@ -481,7 +480,6 @@ export const products = [
     categories: [
       "category92658435pocveqyf",
       "category64258437zefjiyuo",
-      "category92658435pocveqyf",
       "category75144628lkionhyd",
     ],
     tags: [],
@@ -583,7 +581,6 @@ export const products = [
     categories: [
       "category92658435pocveqyf",
       "category64258437zefjiyuo",
-      "category92658435pocveqyf",
       "category75144628lkionhyd",
     ],
     tags: [],
@@ -650,7 +647,6 @@ export const products = [
     categories: [
       "category92658435pocveqyf",
       "category75144628lkionhyd",
-      "category92658435pocveqyf",
       "category64258437zefjiyuo",
     ],
     tags: [],
@@ -1210,7 +1206,7 @@ export const products = [
       "Stylish shoulder bag made of matelassé leather with the iconic double G logo, offering a chic and modern look.",
     price: 26,
     stock: 12,
-    categories: ["category42336157hescuyml", "category42336157hescuyml"],
+    categories: ["category42336157hescuyml"],
     tags: [],
     variants: [],
     gallery: [
@@ -1241,7 +1237,7 @@ export const products = [
       "Compact and versatile mini bag made from Prada’s iconic nylon fabric, featuring a detachable chain strap and leather trim.",
     price: 28,
     stock: 16,
-    categories: ["category42336157hescuyml", "category42336157hescuyml"],
+    categories: ["category42336157hescuyml"],
     tags: [],
     variants: [],
     gallery: [
@@ -1278,7 +1274,7 @@ export const products = [
     gallery: [
       "https://res.cloudinary.com/davjgeymf/image/upload/v1751447796/458925firjgh_u9vlah.jpg",
     ],
-    reviewedBy: ["category42336157hescuyml", "category42336157hescuyml"],
+    reviewedBy: ["category42336157hescuyml"],
     createdBy: "user43210987nopqrstu",
     createdAt: "2024-09-17T08:08:06.729Z",
     updatedAt: "2024-09-17T08:08:06.729Z",
@@ -1304,7 +1300,7 @@ export const products = [
       "Iconic quilted leather bag with a chain-link strap and the signature CC turn-lock closure, offering timeless elegance.",
     price: 32,
     stock: 24,
-    categories: ["category42336157hescuyml", "category42336157hescuyml"],
+    categories: ["category42336157hescuyml"],
     tags: [],
     variants: [],
     gallery: [
@@ -1335,7 +1331,7 @@ export const products = [
       "Oversized canvas tote bag featuring the Dior logo embroidery, ideal for carrying essentials in style.",
     price: 26,
     stock: 12,
-    categories: ["category42336157hescuyml", "category42336157hescuyml"],
+    categories: ["category42336157hescuyml"],
     tags: [],
     variants: [],
     gallery: [
@@ -1366,7 +1362,7 @@ export const products = [
       "Sculptural handbag with a distinctive curved silhouette, crafted from smooth leather and featuring a bold B logo clasp.",
     price: 38,
     stock: 26,
-    categories: ["category42336157hescuyml", "category42336157hescuyml"],
+    categories: ["category42336157hescuyml"],
     tags: [],
     variants: [],
     gallery: [
@@ -1397,7 +1393,7 @@ export const products = [
       "Compact and chic shoulder bag with the iconic FF logo, crafted from soft leather and available in various colors.",
     price: 41,
     stock: 36,
-    categories: ["category42336157hescuyml", "category42336157hescuyml"],
+    categories: ["category42336157hescuyml"],
     tags: [],
     variants: [],
     gallery: [
@@ -1428,7 +1424,7 @@ export const products = [
       "Elegant crossbody bag featuring the Celine Triomphe logo, crafted from smooth calfskin for a minimalist and sophisticated look.",
     price: 32,
     stock: 26,
-    categories: ["category42336157hescuyml", "category42336157hescuyml"],
+    categories: ["category42336157hescuyml"],
     tags: [],
     variants: [],
     gallery: [
@@ -1459,7 +1455,7 @@ export const products = [
       "Classic chain bag with the iconic YSL logo and tassel detail, crafted from premium leather for a glamorous finish.",
     price: 34,
     stock: 28,
-    categories: ["category42336157hescuyml", "category42336157hescuyml"],
+    categories: ["category42336157hescuyml"],
     tags: [],
     variants: [],
     gallery: [

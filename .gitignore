@@ -27,6 +27,8 @@ backend/node_modules
 frontend/node_modules
 frontend/src/components/Footer-1.jsx
 frontend/src/components/Footer-2.jsx
+frontend/src/data/products-1.js
+frontend/src/data/products-new.js
 
 backend/.env
 
